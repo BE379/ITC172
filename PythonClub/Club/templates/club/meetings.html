@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Meetings</h2>
+<table class='table'>
+    <tr>
+        <th>Title</th>
+        <th>Date</th>
+        
+    </tr>
+    {% for item in meetings_list %}
+        <tr>
+            <td><a href="{% url 'minutes' id=item.id %}"> {{ item.meetingtitle }}</a></td>
+            <td>{{ item.meetingdate }}</td>
+            
+        </tr>
+
+    {% endfor %}
+</table>
+
+{% endblock %}
