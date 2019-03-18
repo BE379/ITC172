@@ -49,3 +49,9 @@ class Event(models.Model):
     eventtime=models.TimeField()
     eventdescription=models.TextField()
     eventuserid=models.ForeignKey(User, on_delete=models.DO_NOTHING)
+
+    def __str__(self):
+        return self.eventtitle
+
+    class Meta:
+        db_table='event'
